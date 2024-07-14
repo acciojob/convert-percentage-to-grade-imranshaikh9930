@@ -1,21 +1,25 @@
-function calculateGrade(percentage) {
+function calculateGrade(score) {
   //your code here
 
-	if(percentage >= 90){
-		return 'A';
-	}
-	else if (percentage >= 80 || percentage <=89){
-		return "B";
-	}
-	else if (percentage >= 70 || percentage <= 79){
-		return "C";
-	}
-	else if(percentage >= 60 || percentage <= 69){
-		return "D";
-	}
-	else {
-		return "F";
-	}
+	 if (typeof score !== 'number' || score < 0) {
+        return 'F';
+    }
+
+    // Round the score to the nearest integer
+    let roundedScore = Math.round(score);
+
+    // Determine the grade based on the rounded score
+    if (roundedScore >= 90) {
+        return 'A';
+    } else if (roundedScore >= 80) {
+        return 'B';
+    } else if (roundedScore >= 70) {
+        return 'C';
+    } else if (roundedScore >= 60) {
+        return 'D';
+    } else {
+        return 'F';
+    }
 }
 
 // calculateGrade(90)
